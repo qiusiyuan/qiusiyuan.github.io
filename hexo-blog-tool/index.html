@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>About | siyuanqiu&#39;s blog</title>
-  <meta name="keywords" content>
-  <meta name="description" content="About | siyuanqiu&#39;s blog">
+  <title>hexo blog tool | siyuanqiu&#39;s blog</title>
+  <meta name="keywords" content=" nodejs , hexo , blog ">
+  <meta name="description" content="hexo blog tool | siyuanqiu&#39;s blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="Siyuan Qiu 邱思远Graduated from University of Toronto, Statistics and Computer Science, honors Bachelor of Science. Currently working on cloud platform aiming for AI and data science services. Interested">
 <meta property="og:type" content="website">
@@ -291,24 +291,40 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="page-" class="article article-type-page" itemscope itemprop="blogPost">
+        <article id="post-hexo-blog-tool" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">About</h1>
+        <h1 class="article-title">hexo blog tool</h1>
     
     <div class="article-meta">
         
         
         
+        <span class="book">
+            
+                <a href="javascript:" data-rel="StudyNotes">StudyNotes</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="javascript:" class="color2">nodejs</a>
+            
+            <a href="javascript:" class="color5">hexo</a>
+            
+            <a href="javascript:" class="color5">blog</a>
+            
+        </span>
         
     </div>
     <div class="article-meta">
         
-        Post time:<time class="date" title='更新时间: 2019-11-01 20:24:31'>2019-10-07 09:01</time>
+        Post time:<time class="date" title='更新时间: 2019-11-01 20:24:31'>2019-11-01 19:44</time>
         
     </div>
     <div class="article-meta">
         
-        <span>Words count:142</span>
+        <span>Words count:102</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -338,7 +354,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Siyuan-Qiu-邱思远"><span class="toc-text">Siyuan Qiu 邱思远</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Contact"><span class="toc-text">Contact</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Environment-requirement"><span class="toc-text">Environment requirement</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Install-hexo"><span class="toc-text">Install hexo</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Commands"><span class="toc-text">Commands</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Configure"><span class="toc-text">Configure</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Theme"><span class="toc-text">Theme</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -354,14 +370,42 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="Siyuan-Qiu-邱思远"><a href="#Siyuan-Qiu-邱思远" class="headerlink" title="Siyuan Qiu 邱思远"></a>Siyuan Qiu 邱思远</h3><p>Graduated from University of Toronto, Statistics and Computer Science, honors Bachelor of Science.</p>
-<p>Currently working on cloud platform aiming for AI and data science services.</p>
-<p>Interested in web technologies, machine learning(deep learning) and other interesting topics, for example gaming, scrapy …</p>
-<p>毕业于多伦多大学，统计和计算机科学荣誉科学学士学位。</p>
-<p>现在主要做面向机器学习和数据的云平台服务。</p>
-<p>对于网络，机器学习（深度学习）感兴趣，也对各种杂七杂八的技术感兴趣，比如说游戏（galgame XD），爬虫等。</p>
-<h3 id="Contact"><a href="#Contact" class="headerlink" title="Contact"></a>Contact</h3><p>Please leave comment on this blog</p>
-<p>请于评论区评论</p>
+        <p><a href="https://hexo.io/docs/" target="_blank" rel="noopener">Full doc</a></p>
+<h2 id="Environment-requirement"><a href="#Environment-requirement" class="headerlink" title="Environment requirement"></a>Environment requirement</h2><ul>
+<li>nodejs</li>
+<li>git</li>
+</ul>
+<h2 id="Install-hexo"><a href="#Install-hexo" class="headerlink" title="Install hexo"></a>Install hexo</h2><pre><code class="bash">npm install -g hexo-cli
+</code></pre>
+<h2 id="Commands"><a href="#Commands" class="headerlink" title="Commands"></a>Commands</h2><p>Init project</p>
+<pre><code class="bash">hexo init &lt;folder&gt;
+cd &lt;folder&gt;
+npm install
+</code></pre>
+<p>New page(about me)</p>
+<pre><code class="bash">hexo new page --path about/me &quot;About me&quot;
+</code></pre>
+<p>New post</p>
+<pre><code class="bash">hexo new post &quot;post name&quot;
+</code></pre>
+<p>Generate<br>Generates static files.</p>
+<pre><code class="bash">hexo generate
+hexo g
+</code></pre>
+<p>Clean</p>
+<pre><code class="bash">hexo Clean
+</code></pre>
+<p>Deploy</p>
+<pre><code class="bash">hexo d
+hexo deploy
+</code></pre>
+<p>Serve local</p>
+<pre><code class="bash">hexo server
+</code></pre>
+<p><code>http://localhost:4000/</code></p>
+<h2 id="Configure"><a href="#Configure" class="headerlink" title="Configure"></a>Configure</h2><p>All configuration in <code>_config.yml</code></p>
+<p><code>url</code>: url of you blog website<br><code>theme</code>: theme you want to use<br><code>deploy</code>:<br>    <code>type</code>: git<br>    <code>repo</code>: <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>: user/user.github.io.git<br>    <code>branch</code>: master</p>
+<h2 id="Theme"><a href="#Theme" class="headerlink" title="Theme"></a>Theme</h2><p>refer to <a href="https://hexo.io/docs/themes" target="_blank" rel="noopener">theme</a></p>
 
       
        <hr><span style="font-style: italic;color: gray;"> Please respect copyright, feel free to leave comment for any mistake or confusion. 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论。 </span>
@@ -369,6 +413,18 @@
 </article>
 
 
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题(Title):</span>hexo blog tool</p>
+    <p><span class="copy-title">文章字数(Word count):</span><span class="post-count">102</span></p>
+    <p><span class="copy-title">本文作者(Author):</span><a href="javascript:void(0)" title="Siyuan Qiu">Siyuan Qiu</a></p>
+    <p><span class="copy-title">发布时间(Post Date):</span>2019-11-01, 19:44:01</p>
+    <p><span class="copy-title">最后更新(Last updated):</span>2019-11-01, 20:24:31</p>
+    <span class="copy-title">原始链接(Source link):</span><a class="post-url" href="/hexo-blog-tool/" title="hexo blog tool">https://qiusiyuan.github.io/hexo-blog-tool/</a>
+    <p>
+        <span class="copy-title">版权声明(License):</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0 (CC BY-NC-SA 4.0)"</a> 
+    </p>
+</div>
 
 
 

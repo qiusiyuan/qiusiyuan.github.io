@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>About | siyuanqiu&#39;s blog</title>
-  <meta name="keywords" content>
-  <meta name="description" content="About | siyuanqiu&#39;s blog">
+  <title>Nmap study notes | siyuanqiu&#39;s blog</title>
+  <meta name="keywords" content=" web , network , security ">
+  <meta name="description" content="Nmap study notes | siyuanqiu&#39;s blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="Siyuan Qiu 邱思远Graduated from University of Toronto, Statistics and Computer Science, honors Bachelor of Science. Currently working on cloud platform aiming for AI and data science services. Interested">
 <meta property="og:type" content="website">
@@ -291,24 +291,40 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="page-" class="article article-type-page" itemscope itemprop="blogPost">
+        <article id="post-Nmap-study-notes" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">About</h1>
+        <h1 class="article-title">Nmap study notes</h1>
     
     <div class="article-meta">
         
         
         
+        <span class="book">
+            
+                <a href="javascript:" data-rel="StudyNotes">StudyNotes</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="javascript:" class="color4">web</a>
+            
+            <a href="javascript:" class="color3">network</a>
+            
+            <a href="javascript:" class="color4">security</a>
+            
+        </span>
         
     </div>
     <div class="article-meta">
         
-        Post time:<time class="date" title='更新时间: 2019-11-01 20:24:31'>2019-10-07 09:01</time>
+        Post time:<time class="date" title='更新时间: 2019-11-01 20:24:31'>2019-10-07 12:28</time>
         
     </div>
     <div class="article-meta">
         
-        <span>Words count:142</span>
+        <span>Words count:579</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -338,7 +354,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Siyuan-Qiu-邱思远"><span class="toc-text">Siyuan Qiu 邱思远</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Contact"><span class="toc-text">Contact</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Nmap"><span class="toc-text">Nmap</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Install"><span class="toc-text">Install</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#windows"><span class="toc-text">windows</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#其他"><span class="toc-text">其他</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#命令"><span class="toc-text">命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#列举远程机器开放的端口"><span class="toc-text">列举远程机器开放的端口</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#识别服务指纹"><span class="toc-text">识别服务指纹</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#主机发现"><span class="toc-text">主机发现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#端口检测"><span class="toc-text">端口检测</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#NSE-介绍"><span class="toc-text">NSE 介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#指定网卡进行探测"><span class="toc-text">指定网卡进行探测</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Other"><span class="toc-text">Other</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#ndiff"><span class="toc-text">ndiff</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#zenmap"><span class="toc-text">zenmap</span></a></li></ol></li></ol></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -354,14 +370,59 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="Siyuan-Qiu-邱思远"><a href="#Siyuan-Qiu-邱思远" class="headerlink" title="Siyuan Qiu 邱思远"></a>Siyuan Qiu 邱思远</h3><p>Graduated from University of Toronto, Statistics and Computer Science, honors Bachelor of Science.</p>
-<p>Currently working on cloud platform aiming for AI and data science services.</p>
-<p>Interested in web technologies, machine learning(deep learning) and other interesting topics, for example gaming, scrapy …</p>
-<p>毕业于多伦多大学，统计和计算机科学荣誉科学学士学位。</p>
-<p>现在主要做面向机器学习和数据的云平台服务。</p>
-<p>对于网络，机器学习（深度学习）感兴趣，也对各种杂七杂八的技术感兴趣，比如说游戏（galgame XD），爬虫等。</p>
-<h3 id="Contact"><a href="#Contact" class="headerlink" title="Contact"></a>Contact</h3><p>Please leave comment on this blog</p>
-<p>请于评论区评论</p>
+        <p>最近公司的项目被客户的白帽黑客找出一堆安全漏洞，为此我们在较劲脑汁的想解决方案的同时，也佩服着那位一个人找出如此多漏洞并给我们开了一大堆issue的黑客。本人从来没有接触过网络安全方面的知识。在黑客开的issue里面经常提到一个叫nmap的东西。于是便查了一下，发现nmap是一个网络嗅探(network sniffing)的工具。可以用来检测服务器开放的端口及对应端口提供的服务，以及可能的弱点。感觉这个工具实在是有点强大，于是便找了些资料，学习一下，也对我了解网络有所帮助。</p>
+<h1 id="Nmap"><a href="#Nmap" class="headerlink" title="Nmap"></a>Nmap</h1><h2 id="Install"><a href="#Install" class="headerlink" title="Install"></a>Install</h2><p><a href="https://nmap.org/" target="_blank" rel="noopener">nmap website</a></p>
+<h3 id="windows"><a href="#windows" class="headerlink" title="windows"></a>windows</h3><p>下载后，双击exe文件安装即可</p>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>查看官网</p>
+<h2 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h2><h3 id="列举远程机器开放的端口"><a href="#列举远程机器开放的端口" class="headerlink" title="列举远程机器开放的端口"></a>列举远程机器开放的端口</h3><pre><code>nmap scanme.nmap.org
+</code></pre><p>nmap 进行探测之前要把域名通过DNS 服务器解析为IP地址，我们可以使用指定的DNS服务器进行解析。使用<code>--dns-servers</code>。</p>
+<pre><code>nmap --dns-servers 8.8.8.8 {hostname}
+</code></pre><p>这里使用了google的dns服务器</p>
+<p>使用<code>-pn</code>来停止探测之前的ICMP请求，已达到不触发防火墙的安全机制。</p>
+<pre><code>nmap -Pn {hostname}
+</code></pre><p>探测特定端口：</p>
+<pre><code>nmap -p 100-30000 {hostname}
+</code></pre><p>端口状态：</p>
+<ul>
+<li>open 开放状态</li>
+<li>closed 关闭状态</li>
+<li>filtered 过滤无法收到返回的probe</li>
+<li>unfiltered 收到返回的probe，但是无法确认</li>
+</ul>
+<h3 id="识别服务指纹"><a href="#识别服务指纹" class="headerlink" title="识别服务指纹"></a>识别服务指纹</h3><pre><code>nmap -sV {hostIP}
+</code></pre><p>侵略性探测</p>
+<pre><code>nmap -A -v -T4 {ip}
+</code></pre><pre><code>nmap -sC -sV -O {ip}
+</code></pre><h3 id="主机发现"><a href="#主机发现" class="headerlink" title="主机发现"></a>主机发现</h3><p><strong>CIDR</strong>： classless inter-domain routing 无类别域间路由<br>172.16.1.1/24 表示在 172.168.1.1-172.16.1.255之间所有的主机ip地址</p>
+<pre><code>nmap -sP {CIDR}
+</code></pre><pre><code>nmap -sn {CIDR}
+</code></pre><p>输出结果xml：</p>
+<pre><code>nmap -sn CIDR -oX test.xml
+</code></pre><h3 id="端口检测"><a href="#端口检测" class="headerlink" title="端口检测"></a>端口检测</h3><pre><code>nmap -p{port1, port2} {host}
+</code></pre><p>范围扫描</p>
+<pre><code>nmap -p1-100 {host}
+</code></pre><p>所有端口</p>
+<pre><code>nmap -p- {host}
+</code></pre><p>指定端口的协议</p>
+<pre><code>nmap -p T:22,U:53 {host}
+</code></pre><p>通过协议名来扫描端口</p>
+<pre><code>nmap -p smtp {host}
+</code></pre><p>wild card</p>
+<pre><code>nmap -p s* {host}
+</code></pre><h3 id="NSE-介绍"><a href="#NSE-介绍" class="headerlink" title="NSE 介绍"></a>NSE 介绍</h3><p>nmap script engine </p>
+<pre><code>nmap --script {scriptname} 
+</code></pre><pre><code>nmap --script http-header {host}
+</code></pre><p>漏洞检测</p>
+<pre><code>nmap -sV --script vuln {host}
+</code></pre><p>NSE 更新：</p>
+<pre><code>nmap -script-updatedb
+</code></pre><h3 id="指定网卡进行探测"><a href="#指定网卡进行探测" class="headerlink" title="指定网卡进行探测"></a>指定网卡进行探测</h3><p>输出网卡信息</p>
+<pre><code>nmap --iflist
+</code></pre><pre><code>nmap -e interface CIDR
+</code></pre><pre><code>nmap -e eth0 {ip}
+</code></pre><h2 id="Other"><a href="#Other" class="headerlink" title="Other"></a>Other</h2><h4 id="ndiff"><a href="#ndiff" class="headerlink" title="ndiff"></a>ndiff</h4><p>compare two nmap xml file</p>
+<pre><code> ndiff file1 file2
+</code></pre><h4 id="zenmap"><a href="#zenmap" class="headerlink" title="zenmap"></a>zenmap</h4><p>可视化nmap</p>
 
       
        <hr><span style="font-style: italic;color: gray;"> Please respect copyright, feel free to leave comment for any mistake or confusion. 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论。 </span>
@@ -369,6 +430,18 @@
 </article>
 
 
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题(Title):</span>Nmap study notes</p>
+    <p><span class="copy-title">文章字数(Word count):</span><span class="post-count">579</span></p>
+    <p><span class="copy-title">本文作者(Author):</span><a href="javascript:void(0)" title="Siyuan Qiu">Siyuan Qiu</a></p>
+    <p><span class="copy-title">发布时间(Post Date):</span>2019-10-07, 12:28:26</p>
+    <p><span class="copy-title">最后更新(Last updated):</span>2019-11-01, 20:24:31</p>
+    <span class="copy-title">原始链接(Source link):</span><a class="post-url" href="/Nmap-study-notes/" title="Nmap study notes">https://qiusiyuan.github.io/Nmap-study-notes/</a>
+    <p>
+        <span class="copy-title">版权声明(License):</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0 (CC BY-NC-SA 4.0)"</a> 
+    </p>
+</div>
 
 
 
