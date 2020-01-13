@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>hello blog | siyuanqiu&#39;s blog</title>
-  <meta name="keywords" content=" random ">
-  <meta name="description" content="hello blog | siyuanqiu&#39;s blog">
+  <title>Quick Setup for Sring Boot Admin 2.2 | siyuanqiu&#39;s blog</title>
+  <meta name="keywords" content=" spring boot , spring boot admin , java , spring ">
+  <meta name="description" content="Quick Setup for Sring Boot Admin 2.2 | siyuanqiu&#39;s blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="Siyuan Qiu 邱思远Graduated from University of Toronto, Statistics and Computer Science, honors Bachelor of Science. Currently working on cloud platform aiming for AI and data science services. Interested">
 <meta property="og:type" content="website">
@@ -319,9 +319,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-hello-blog" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-Quick-Setup-for-Sring-Boot-Admin-2-2" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">hello blog</h1>
+        <h1 class="article-title">Quick Setup for Sring Boot Admin 2.2</h1>
     
     <div class="article-meta">
         
@@ -329,26 +329,32 @@
         
         <span class="book">
             
-                <a href="javascript:" data-rel="Random">Random</a>
+                <a href="javascript:" data-rel="Experience">Experience</a>
             
         </span>
         
         
         <span class="tag">
             
-            <a href="javascript:" class="color2">random</a>
+            <a href="javascript:" class="color2">spring boot</a>
+            
+            <a href="javascript:" class="color3">spring boot admin</a>
+            
+            <a href="javascript:" class="color5">java</a>
+            
+            <a href="javascript:" class="color2">spring</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-        Post time:<time class="date" title='更新时间: 2020-01-13 20:24:42'>2019-10-06 06:49</time>
+        Post time:<time class="date" title='更新时间: 2020-01-13 20:24:42'>2020-01-13 20:22</time>
         
     </div>
     <div class="article-meta">
         
-        <span>Words count:348</span>
+        <span>Words count:584</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -378,7 +384,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Start"><span class="toc-text">Start</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#开始"><span class="toc-text">开始</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#What-is-spring-boot-admin"><span class="toc-text">What is spring boot admin</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SBA-version"><span class="toc-text">SBA version</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Initialize-a-spring-boot-project-for-spring-boot-admin"><span class="toc-text">Initialize a spring boot project for spring boot admin</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Include-dependencies"><span class="toc-text">Include dependencies</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Application-Property"><span class="toc-text">Application Property</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#main-Application-java"><span class="toc-text">main Application.java</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Launch"><span class="toc-text">Launch</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Register-other-spring-boot-services-to-monitor"><span class="toc-text">Register other spring boot services to monitor</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Dependency"><span class="toc-text">Dependency</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#properties-setting"><span class="toc-text">properties setting</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Launch-service"><span class="toc-text">Launch service</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -394,8 +400,116 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Start"><a href="#Start" class="headerlink" title="Start"></a>Start</h2><p>Hi everyone, this is my first blog. It’s aimed for recording my journey of computer science technologies. It might contain <strong>study notes</strong>, <strong>practice</strong>, <strong>experiment</strong> and <strong>problem and solution from my work</strong>. I determine to use blog to record these things is because I find it necessary to take these things down. I think it’s very useful to record what I did and what I learnt. I feel like I need a place so that later on, I can look back when I meet a problem that can be done using the similar technology or logic. I have tried ‘boostnote’, ‘github’ or even using paper and pen. I finally thought that I need a blog for this. So the essential point of this blog is not for others but for myself to refer back. It would be also good if this blog can help others :).</p>
-<h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><p>大家好，这是我的第一份博客，我将用她来记录我的学习笔记，实验，练习以及我工作中遇到的问题和具体解决方案。我之所以决定要开始用博客的来记录这些，是因为我经常觉得我需要回顾之前学习的做过的东西来实现我正在遇到的问题。我需要一个地方来记录他们。我也试过boostnote，github或者直接写在纸上。但我还是觉得，一篇篇博客是最适合这个的。所以其实这个博客并不是为了给他人看或者什么的，主要是为了我自己能够在以后可以方便的回顾。但是如果能帮到他人也是很好的（笑）。</p>
+        <h2 id="What-is-spring-boot-admin"><a href="#What-is-spring-boot-admin" class="headerlink" title="What is spring boot admin"></a>What is spring boot admin</h2><p>It’s used to manage and monitor one or multiple spring boot services.</p>
+<p>This is a quick setup note for SBA, for more details please refer to <a href="https://codecentric.github.io/spring-boot-admin/current/" target="_blank" rel="noopener">spring boot admin documentation</a></p>
+<h2 id="SBA-version"><a href="#SBA-version" class="headerlink" title="SBA version"></a>SBA version</h2><p>2.2.0</p>
+<h2 id="Initialize-a-spring-boot-project-for-spring-boot-admin"><a href="#Initialize-a-spring-boot-project-for-spring-boot-admin" class="headerlink" title="Initialize a spring boot project for spring boot admin"></a>Initialize a spring boot project for spring boot admin</h2><p>Set up a simple spring boot project using <a href="https://start.spring.io/" target="_blank" rel="noopener">spring initializr</a></p>
+<h2 id="Include-dependencies"><a href="#Include-dependencies" class="headerlink" title="Include dependencies"></a>Include dependencies</h2><p><strong>build.gradle</strong></p>
+<pre><code class="json">dependencies {
+    implementation &#39;org.springframework.boot:spring-boot-starter-web&#39;
+    testImplementation(&#39;org.springframework.boot:spring-boot-starter-test&#39;) {
+        exclude group: &#39;org.junit.vintage&#39;, module: &#39;junit-vintage-engine&#39;
+    }
+
+    implementation group: &#39;de.codecentric&#39;, name: &#39;spring-boot-admin-starter-server&#39;, version: &#39;2.2.0&#39;
+    implementation &#39;org.springframework.boot:spring-boot-starter-security&#39;
+}</code></pre>
+<p>This is the full gradle dependency of my SBA project.<br>Notice I included <code>spring-security</code> for a simple Identity check for SBA.</p>
+<h2 id="Application-Property"><a href="#Application-Property" class="headerlink" title="Application Property"></a>Application Property</h2><p><strong>application.properties</strong></p>
+<pre><code>server.port = 8089
+spring.application.name = adminserver
+server.forward-headers-strategy=native
+spring.profiles.active=secure
+
+spring.security.user.name=admin
+spring.security.user.password=password
+spring.boot.admin.client.username=client
+spring.boot.admin.client.password=password</code></pre><ol>
+<li>server port set to 8089</li>
+<li><code>server.forward-headers-strategy=native</code> set for services behind a secure layer</li>
+<li><code>spring.profiles.active=secure</code> for secure configuration you will see later</li>
+<li><code>spring.security.user</code> set for the Authentication of simple identification of SBA.</li>
+<li><code>spring.boot.admin.client</code> This is the credential used for the spring boot services that you want to monitor to register to SBA.</li>
+</ol>
+<h2 id="main-Application-java"><a href="#main-Application-java" class="headerlink" title="main Application.java"></a>main Application.java</h2><p>Inside your mainApplication.java</p>
+<pre><code class="java">package com.your.packagename;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import de.codecentric.boot.admin.server.config.EnableAdminServer;
+import de.codecentric.boot.admin.server.config.AdminServerProperties;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.web.authentication.SavedRequestAwareAuthenticationSuccessHandler;
+
+@SpringBootApplication
+@EnableAdminServer
+public class SBAserverApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(SBAserverApplication.class, args);
+    }
+
+    @Profile(&quot;insecure&quot;)
+    @Configuration
+    public static class SecurityPermitAllConfig extends WebSecurityConfigurerAdapter{
+
+        @Override
+        protected void configure(HttpSecurity http) throws Exception {
+            http.authorizeRequests().anyRequest().permitAll().and().csrf().disable();
+        }
+    }
+
+    @Profile(&quot;secure&quot;)
+    @Configuration
+    public static class SecuritySecureConfig extends WebSecurityConfigurerAdapter{
+
+        private String adminContextPath;
+
+        public SecuritySecureConfig( AdminServerProperties adminServerProperties ) {
+            this.adminContextPath = adminServerProperties.getContextPath();
+        }
+
+        @Override
+        protected void configure(HttpSecurity http) throws Exception {
+            SavedRequestAwareAuthenticationSuccessHandler successHandler = new SavedRequestAwareAuthenticationSuccessHandler();
+            successHandler.setTargetUrlParameter(&quot;redirectTo&quot;);
+
+            http.authorizeRequests().antMatchers(adminContextPath+&quot;/assets/**&quot;).permitAll()
+                    .antMatchers(adminContextPath+&quot;/login&quot;).permitAll().anyRequest().authenticated().and().formLogin()
+                    .loginPage(adminContextPath+&quot;/login&quot;).successHandler(successHandler).and().logout()
+                    .logoutUrl(adminContextPath+&quot;/logout&quot;).and().httpBasic().and().csrf().disable();
+        }
+    }
+
+}</code></pre>
+<ol>
+<li><code>@EnableAdminServer</code> make this project to be SBA server</li>
+<li><code>SecuritySecureConfig</code> configure security layer to perform a simple login user identification process before enter the dashboard of SBA</li>
+</ol>
+<h2 id="Launch"><a href="#Launch" class="headerlink" title="Launch"></a>Launch</h2><p>Now you can launch this application like other spring boot app.</p>
+<p>gradlew:</p>
+<pre><code>gradlew bootRun</code></pre><p>And the SBA will serve at port <code>8089</code><br>Open it through browser and have a check how it looks like.</p>
+<h2 id="Register-other-spring-boot-services-to-monitor"><a href="#Register-other-spring-boot-services-to-monitor" class="headerlink" title="Register other spring boot services to monitor"></a>Register other spring boot services to monitor</h2><p>Prepare a normal spring boot service.</p>
+<h3 id="Dependency"><a href="#Dependency" class="headerlink" title="Dependency"></a>Dependency</h3><p>Add dependency</p>
+<p><strong>build.gradle</strong></p>
+<pre><code class="json">
+dependencies {
+
+    // spring boot admin
+    implementation group: &#39;de.codecentric&#39;, name: &#39;spring-boot-admin-starter-client&#39;, version: &#39;2.2.0&#39;
+
+
+}
+</code></pre>
+<h3 id="properties-setting"><a href="#properties-setting" class="headerlink" title="properties setting"></a>properties setting</h3><p><strong>application.properties</strong></p>
+<pre><code>spring.boot.admin.client.url=http://localhost:8089  
+management.endpoints.web.exposure.include=*
+spring.boot.admin.client.username=client
+spring.boot.admin.client.password=password
+</code></pre><h3 id="Launch-service"><a href="#Launch-service" class="headerlink" title="Launch service"></a>Launch service</h3><p>Now you launch your registered services, and you can monitor it through the SBA dashboard.</p>
 
       
        <hr><span style="font-style: italic;color: gray;"> Please respect copyright, feel free to leave comment for any mistake or confusion. 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论。 </span>
@@ -405,12 +519,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题(Title):</span>hello blog</p>
-    <p><span class="copy-title">文章字数(Word count):</span><span class="post-count">348</span></p>
+    <p><span class="copy-title">文章标题(Title):</span>Quick Setup for Sring Boot Admin 2.2</p>
+    <p><span class="copy-title">文章字数(Word count):</span><span class="post-count">584</span></p>
     <p><span class="copy-title">本文作者(Author):</span><a href="javascript:void(0)" title="Siyuan Qiu">Siyuan Qiu</a></p>
-    <p><span class="copy-title">发布时间(Post Date):</span>2019-10-06, 06:49:31</p>
+    <p><span class="copy-title">发布时间(Post Date):</span>2020-01-13, 20:22:29</p>
     <p><span class="copy-title">最后更新(Last updated):</span>2020-01-13, 20:24:42</p>
-    <span class="copy-title">原始链接(Source link):</span><a class="post-url" href="/hello-blog/undefined/" title="hello blog">https://qiusiyuan.github.io/hello-blog/undefined/</a>
+    <span class="copy-title">原始链接(Source link):</span><a class="post-url" href="/Quick-Setup-for-Sring-Boot-Admin-2-2/en/" title="Quick Setup for Sring Boot Admin 2.2">https://qiusiyuan.github.io/Quick-Setup-for-Sring-Boot-Admin-2-2/en/</a>
     <p>
         <span class="copy-title">版权声明(License):</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0 (CC BY-NC-SA 4.0)"</a> 
     </p>
