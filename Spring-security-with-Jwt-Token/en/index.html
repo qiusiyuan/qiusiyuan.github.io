@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>hexo blog tool | siyuanqiu&#39;s blog</title>
-  <meta name="keywords" content=" nodejs , hexo , blog ">
-  <meta name="description" content="hexo blog tool | siyuanqiu&#39;s blog">
+  <title>Spring security with Jwt Token | siyuanqiu&#39;s blog</title>
+  <meta name="keywords" content=" spring boot , java , spring , spring security , jwt token ">
+  <meta name="description" content="Spring security with Jwt Token | siyuanqiu&#39;s blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="Siyuan Qiu 邱思远Graduated from University of Toronto, Statistics and Computer Science, honors Bachelor of Science. Currently working on cloud platform aiming for AI and data science services. Interested">
 <meta property="og:type" content="website">
@@ -335,9 +335,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-hexo-blog-tool" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-Spring-security-with-Jwt-Token" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">hexo blog tool</h1>
+        <h1 class="article-title">Spring security with Jwt Token</h1>
     
     <div class="article-meta">
         
@@ -345,30 +345,34 @@
         
         <span class="book">
             
-                <a href="javascript:" data-rel="StudyNotes">StudyNotes</a>
+                <a href="javascript:" data-rel="Experience">Experience</a>
             
         </span>
         
         
         <span class="tag">
             
-            <a href="javascript:" class="color2">nodejs</a>
+            <a href="javascript:" class="color2">spring boot</a>
             
-            <a href="javascript:" class="color5">hexo</a>
+            <a href="javascript:" class="color5">java</a>
             
-            <a href="javascript:" class="color5">blog</a>
+            <a href="javascript:" class="color2">spring</a>
+            
+            <a href="javascript:" class="color1">spring security</a>
+            
+            <a href="javascript:" class="color5">jwt token</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-        Post time:<time class="date" title='更新时间: 2020-01-14 02:32:10'>2019-11-01 19:44</time>
+        Post time:<time class="date" title='更新时间: 2020-01-14 02:32:10'>2020-01-14 02:28</time>
         
     </div>
     <div class="article-meta">
         
-        <span>Words count:178</span>
+        <span>Words count:935</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -398,7 +402,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Environment-requirement"><span class="toc-text">Environment requirement</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Install-hexo"><span class="toc-text">Install hexo</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Commands"><span class="toc-text">Commands</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Configure"><span class="toc-text">Configure</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Theme"><span class="toc-text">Theme</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Deploy"><span class="toc-text">Deploy</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Permalinks"><span class="toc-text">Permalinks</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Introduction"><span class="toc-text">Introduction</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Dependencies"><span class="toc-text">Dependencies</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#User-details"><span class="toc-text">User details</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#User-Details-Services"><span class="toc-text">User Details Services</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#JWT-token-util"><span class="toc-text">JWT token util</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Auth-services"><span class="toc-text">Auth services</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Jwt-token-filter"><span class="toc-text">Jwt token filter</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Web-Security-Configuration"><span class="toc-text">Web Security Configuration</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#User-management-controller"><span class="toc-text">User management controller</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -414,59 +418,308 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><a href="https://hexo.io/docs/" target="_blank" rel="noopener">Full doc</a></p>
-<h2 id="Environment-requirement"><a href="#Environment-requirement" class="headerlink" title="Environment requirement"></a>Environment requirement</h2><ul>
-<li>nodejs</li>
-<li>git</li>
-</ul>
-<h2 id="Install-hexo"><a href="#Install-hexo" class="headerlink" title="Install hexo"></a>Install hexo</h2><pre><code class="bash">npm install -g hexo-cli
+        <h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>Spring provide spring security for Authentication and Authurization for your application. Jwt token is currently widely used for applications to identify user in network communication.<br>This blog will combine <strong>Jwt token</strong> with <strong>spring security</strong> to make a simple <strong>user management service</strong> for your spring boot application.</p>
+<p><strong>key procedures</strong></p>
+<ol>
+<li>Dependencies</li>
+<li>User details</li>
+<li>User Details Services</li>
+<li>JWT token utils</li>
+<li>Auth services</li>
+<li>Jwt token filter</li>
+<li>Web Security Configuration</li>
+<li>User management controller</li>
+</ol>
+<p><a href="https://github.com/qiusiyuan/springboot-play/tree/master/helloworld/src/main/java/com/qiusiyuan/helloworld" target="_blank" rel="noopener">Example projects</a></p>
+<h1 id="Dependencies"><a href="#Dependencies" class="headerlink" title="Dependencies"></a>Dependencies</h1><p><strong>build.gradle</strong></p>
+<pre><code>dependencies {
+    // Spring security
+    implementation &quot;org.springframework.boot:spring-boot-starter-security&quot;
+    implementation &quot;io.jsonwebtoken:jjwt:0.9.0&quot;
+}</code></pre><p>Important note: <code>jjwt:0.9.0</code> is usable in java 8 or ealier version.</p>
+<h1 id="User-details"><a href="#User-details" class="headerlink" title="User details"></a>User details</h1><p>I have <code>User.java</code> and <code>Role.java</code> for object of my users.</p>
+<p><code>Role.java</code></p>
+<pre><code class="java">public class Role {
+
+    private Long id;
+
+    private String name;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+}
 </code></pre>
-<h2 id="Commands"><a href="#Commands" class="headerlink" title="Commands"></a>Commands</h2><p>Init project</p>
-<pre><code class="bash">hexo init &lt;folder&gt;
-cd &lt;folder&gt;
-npm install
+<p><code>User.java</code></p>
+<pre><code class="java">public class User implements UserDetails {
+
+    private static final long serialVersionUID = -1L;
+
+    private Long id;
+
+    private String username;
+
+    private String password;
+
+    private List&lt;Role&gt; roles;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public List&lt;Role&gt; getRoles() {
+        return roles;
+    }
+
+    public void setRoles(List&lt;Role&gt; roles) {
+        this.roles = roles;
+    }
+
+    @Override
+    public boolean isAccountNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isAccountNonLocked() {
+        return true;
+    }
+
+    @Override
+    public boolean isCredentialsNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return true;
+    }
+
+    @Override
+    public Collection&lt;? extends GrantedAuthority&gt; getAuthorities() {
+        List&lt;GrantedAuthority&gt; authorities = new ArrayList&lt;&gt;();
+        for (Role role : roles) {
+            authorities.add( new SimpleGrantedAuthority( role.getName() ) );
+        }
+        return authorities;
+    }
+
+    @Override
+    public String getUsername() {
+        return username;
+    }
+
+    @Override
+    public String getPassword() {
+        return password;
+    }
+
+    public String toString(){
+        String body = this.getUsername() + &quot;:&quot; + this.getPassword();
+        for (Role role : this.roles){
+            body += &quot;,&quot; + role.getName();
+        }
+        return body;
+    }
+}</code></pre>
+<p>Important note: <code>User</code> inherits <code>UserDetails</code> from spring security, so that it can achieve some of the key abilities from spring secure </p>
+<h1 id="User-Details-Services"><a href="#User-Details-Services" class="headerlink" title="User Details Services"></a>User Details Services</h1><p><code>UserService.java</code></p>
+<pre><code class="java">@Service
+public class UserService implements UserDetailsService {
+
+    @Autowired
+    InMemoryDao InMemoryDao;
+
+    @Override
+    public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {
+
+        User user = InMemoryDao.loadUserByUsername(s);
+        if (user == null) {
+            throw new UsernameNotFoundException(&quot;Non existing user&quot;);
+        }
+        return user;
+    }
+
+}
 </code></pre>
-<p>New page(about me)</p>
-<pre><code class="bash">hexo new page --path about/me &quot;About me&quot;
+<p>Important notes:</p>
+<ol>
+<li><code>InMemoryDao</code> is a self defined <code>ArrayList&lt;User&gt;</code> to act as a in memory database for user management</li>
+<li><code>UserDetailsService</code> is from spring security, and it’s need for spring security configuration to act on authentication and authorization. To implement this, you must implement <code>loadUserByUsername</code> function.</li>
+</ol>
+<h1 id="JWT-token-util"><a href="#JWT-token-util" class="headerlink" title="JWT token util"></a>JWT token util</h1><p>Make a file for Jwt token utilities.<br><a href="https://github.com/qiusiyuan/springboot-play/blob/master/helloworld/src/main/java/com/qiusiyuan/helloworld/util/JwtTokenUtil.java" target="_blank" rel="noopener">Example</a></p>
+<h1 id="Auth-services"><a href="#Auth-services" class="headerlink" title="Auth services"></a>Auth services</h1><p><code>AuthService.java</code></p>
+<pre><code class="java">@Service
+public class AuthService {
+
+    @Autowired
+    private AuthenticationManager authenticationManager;
+
+    @Autowired
+    private JwtTokenUtil jwtTokenUtil;
+
+    @Autowired
+    private InMemoryDao inMemoryDao;
+
+    public String login( String username, String password ) {
+
+        UsernamePasswordAuthenticationToken upToken = new UsernamePasswordAuthenticationToken( username, password );
+
+        Authentication authentication = authenticationManager.authenticate(upToken);
+        SecurityContextHolder.getContext().setAuthentication(authentication);
+
+        final User userDetails = inMemoryDao.loadUserByUsername( username );
+        if (userDetails == null){
+            return null;
+        }
+        final String token = jwtTokenUtil.generateToken(userDetails);
+        return token;
+    }
+
+    public User register( User userToAdd ) {
+
+        final String username = userToAdd.getUsername();
+        boolean flag = inMemoryDao.userExists(username);
+        if( flag ) {
+            return null;
+        }
+        BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+        final String rawPassword = userToAdd.getPassword();
+        userToAdd.setPassword( encoder.encode(rawPassword) );
+        return inMemoryDao.createUser(userToAdd);
+    }
+}</code></pre>
+<p>Important notes: This is the service that provide funtionalities for user to <code>login</code> and <code>register</code></p>
+<h1 id="Jwt-token-filter"><a href="#Jwt-token-filter" class="headerlink" title="Jwt token filter"></a>Jwt token filter</h1><p>Then we need a filter to apply Jwt token check for every requests.<br><code>JwtTokenFilter.java</code></p>
+<pre><code class="java">@Component
+public class JwtTokenFilter extends OncePerRequestFilter {
+
+    @Autowired
+    private InMemoryDao inMemoryDao;
+
+    @Autowired
+    private JwtTokenUtil jwtTokenUtil;
+
+    @Override
+    protected void doFilterInternal ( HttpServletRequest request, HttpServletResponse response, FilterChain chain) throws ServletException, IOException {
+
+        String authHeader = request.getHeader( Const.HEADER_STRING );
+        if (authHeader != null &amp;&amp; authHeader.startsWith( Const.TOKEN_PREFIX )) {
+            final String authToken = authHeader.substring( Const.TOKEN_PREFIX.length() );
+            String username = jwtTokenUtil.getUsernameFromToken(authToken);
+            if (username != null &amp;&amp; SecurityContextHolder.getContext().getAuthentication() == null) {
+                User userDetails = this.inMemoryDao.loadUserByUsername(username);
+                    if (jwtTokenUtil.validateToken(authToken, userDetails)) {
+                        UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(
+                                userDetails, null, userDetails.getAuthorities());
+                        authentication.setDetails(new WebAuthenticationDetailsSource().buildDetails(
+                                request));
+                        SecurityContextHolder.getContext().setAuthentication(authentication);
+                    }
+            }
+        }
+        chain.doFilter(request, response);
+    }
+}</code></pre>
+<p>Important notes: After this filter, jwt token information will be extracted into user info and store in <code>SecurityContextHolder</code>, in other services, you can get the user info in <code>SecurityContextHolder.getContext().getAuthentication();</code></p>
+<h1 id="Web-Security-Configuration"><a href="#Web-Security-Configuration" class="headerlink" title="Web Security Configuration"></a>Web Security Configuration</h1><p>Then we can configure the spring secure web configuration<br><code>WebSecurityConfig.java</code></p>
+<pre><code class="java">@Configuration
+@EnableWebSecurity
+@EnableGlobalMethodSecurity(prePostEnabled=true)
+public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
+
+    @Autowired
+    private UserService userService;
+
+    @Bean
+    public JwtTokenFilter authenticationTokenFilterBean() throws Exception {
+        return new JwtTokenFilter();
+    }
+
+    @Bean
+    public AuthenticationManager authenticationManagerBean() throws Exception {
+        return super.authenticationManagerBean();
+    }
+
+    @Override
+    protected void configure( AuthenticationManagerBuilder auth ) throws Exception {
+        auth.userDetailsService( userService ).passwordEncoder( new BCryptPasswordEncoder() );
+    }
+
+    @Override
+    protected void configure( HttpSecurity httpSecurity ) throws Exception {
+
+        httpSecurity.csrf().disable()
+                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
+                .authorizeRequests()
+                .antMatchers(HttpMethod.OPTIONS, &quot;/**&quot;).permitAll()
+                .antMatchers(HttpMethod.POST, &quot;/authentication/**&quot;).permitAll()   
+                .antMatchers(&quot;/actuator/**&quot;).permitAll() 
+                .antMatchers(&quot;/message&quot;).hasAuthority(&quot;ADMIN&quot;)
+                .anyRequest().hasAnyAuthority(&quot;ADMIN&quot;, &quot;USER&quot;);
+
+        httpSecurity
+                .addFilterBefore(authenticationTokenFilterBean(), UsernamePasswordAuthenticationFilter.class);
+        httpSecurity.headers().cacheControl();
+    }
+
+}</code></pre>
+<p>Important notes:</p>
+<ol>
+<li><p>Notice we set our custom <code>UserService</code> for authentication to user</p>
+</li>
+<li><p>I allowed all the request to <code>authentication</code> services</p>
+</li>
+<li><p>I allowed all the request to <code>actuator</code> endpoints which is for SBA(spring boot admin) to monitor this service.</p>
+</li>
+<li><p>Then I apply the filter for JWT token.</p>
+<h1 id="User-management-controller"><a href="#User-management-controller" class="headerlink" title="User management controller"></a>User management controller</h1><p>Simple controller</p>
+<pre><code class="java">@RestController
+public class JwtTokenAuthController {
+
+ @Autowired
+ private AuthService authService;
+
+ @RequestMapping(value = &quot;/authentication/login&quot;, method = RequestMethod.POST)
+ public String createToken( String username,String password ) throws AuthenticationException {
+     return authService.login( username, password );
+ }
+
+ @RequestMapping(value = &quot;/authentication/register&quot;, method = RequestMethod.POST)
+ public User register( @RequestBody User addedUser ) throws AuthenticationException {
+     return authService.register(addedUser);
+ }
 </code></pre>
-<p>New post</p>
-<pre><code class="bash">hexo new post &quot;post name&quot;
-</code></pre>
-<p>Generate<br>Generates static files.</p>
-<pre><code class="bash">hexo generate
-hexo g
-</code></pre>
-<p>Clean</p>
-<pre><code class="bash">hexo Clean
-</code></pre>
-<p>Deploy</p>
-<pre><code class="bash">hexo d
-hexo deploy
-</code></pre>
-<p>Serve local</p>
-<pre><code class="bash">hexo server
-</code></pre>
-<p><code>http://localhost:4000/</code></p>
-<h2 id="Configure"><a href="#Configure" class="headerlink" title="Configure"></a>Configure</h2><p>All configuration in <code>_config.yml</code></p>
-<p><code>url</code>: url of you blog website<br><code>theme</code>: theme you want to use<br><code>deploy</code>:<br>    <code>type</code>: git<br>    <code>repo</code>: <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>: user/user.github.io.git<br>    <code>branch</code>: master</p>
-<h2 id="Theme"><a href="#Theme" class="headerlink" title="Theme"></a>Theme</h2><p>refer to <a href="https://hexo.io/docs/themes" target="_blank" rel="noopener">theme</a></p>
-<h2 id="Deploy"><a href="#Deploy" class="headerlink" title="Deploy"></a>Deploy</h2><p>Command line</p>
-<pre><code class="bash">hexo Clean
-hexo generate
-hexo deploy
-</code></pre>
-<p>Travis:<br><a href="https://hexo.io/docs/github-pages" target="_blank" rel="noopener">https://hexo.io/docs/github-pages</a></p>
-<h2 id="Permalinks"><a href="#Permalinks" class="headerlink" title="Permalinks"></a>Permalinks</h2><p>To create a multi-language site, you can modify the new_post_name and permalink settings like this:</p>
-<pre><code class="yml">new_post_name: :lang/:title.md
-permalink: :lang/:title/
-</code></pre>
-<p>When you create a new post, the post will be saved to:</p>
-<pre><code class="bash">hexo new &quot;Hello World&quot; --lang tw
-# =&gt; source/_posts/tw/Hello-World.md
-</code></pre>
-<p>and the URL will be:</p>
-<pre><code>http://localhost:4000/tw/hello-world/
-</code></pre>
+</li>
+</ol>
+<p>}</p>
+<pre><code>
+# Launch
+Now you must call `login` api to get the token first to get access to other apis.</code></pre>
       
        <hr><span style="font-style: italic;color: gray;"> Please respect copyright, feel free to leave comment for any mistake or confusion. 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论。 </span>
     </div>
@@ -475,12 +728,12 @@ permalink: :lang/:title/
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题(Title):</span>hexo blog tool</p>
-    <p><span class="copy-title">文章字数(Word count):</span><span class="post-count">178</span></p>
+    <p><span class="copy-title">文章标题(Title):</span>Spring security with Jwt Token</p>
+    <p><span class="copy-title">文章字数(Word count):</span><span class="post-count">935</span></p>
     <p><span class="copy-title">本文作者(Author):</span><a href="javascript:void(0)" title="Siyuan Qiu">Siyuan Qiu</a></p>
-    <p><span class="copy-title">发布时间(Post Date):</span>2019-11-01, 19:44:01</p>
+    <p><span class="copy-title">发布时间(Post Date):</span>2020-01-14, 02:28:33</p>
     <p><span class="copy-title">最后更新(Last updated):</span>2020-01-14, 02:32:10</p>
-    <span class="copy-title">原始链接(Source link):</span><a class="post-url" href="/hexo-blog-tool/en/" title="hexo blog tool">https://qiusiyuan.github.io/hexo-blog-tool/en/</a>
+    <span class="copy-title">原始链接(Source link):</span><a class="post-url" href="/Spring-security-with-Jwt-Token/en/" title="Spring security with Jwt Token">https://qiusiyuan.github.io/Spring-security-with-Jwt-Token/en/</a>
     <p>
         <span class="copy-title">版权声明(License):</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0 (CC BY-NC-SA 4.0)"</a> 
     </p>
