@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="siyuanqiu&#39;s blog">
 <meta property="og:description" content="Siyuan Qiu 邱思远Graduated from University of Toronto, Statistics and Computer Science, honors Bachelor of Science. Currently working on cloud platform aiming for AI and data science services. Interested">
 <meta property="og:locale" content="en, ch">
-<meta property="og:updated_time" content="2020-01-13T20:30:36.298Z">
+<meta property="og:updated_time" content="2020-01-14T01:41:00.825Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="About">
 <meta name="twitter:description" content="Siyuan Qiu 邱思远Graduated from University of Toronto, Statistics and Computer Science, honors Bachelor of Science. Currently working on cloud platform aiming for AI and data science services. Interested">
@@ -349,12 +349,12 @@
     </div>
     <div class="article-meta">
         
-        Post time:<time class="date" title='更新时间: 2020-01-13 20:30:36'>2020-01-13 20:22</time>
+        Post time:<time class="date" title='更新时间: 2020-01-14 01:41:00'>2020-01-13 20:22</time>
         
     </div>
     <div class="article-meta">
         
-        <span>Words count:615</span>
+        <span>Words count:646</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -384,7 +384,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#What-is-spring-boot-admin"><span class="toc-text">What is spring boot admin</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SBA-version"><span class="toc-text">SBA version</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Initialize-a-spring-boot-project-for-spring-boot-admin"><span class="toc-text">Initialize a spring boot project for spring boot admin</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Include-dependencies"><span class="toc-text">Include dependencies</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Application-Property"><span class="toc-text">Application Property</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#main-Application-java"><span class="toc-text">main Application.java</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Launch"><span class="toc-text">Launch</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Register-other-spring-boot-services-to-monitor"><span class="toc-text">Register other spring boot services to monitor</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Dependency"><span class="toc-text">Dependency</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#properties-setting"><span class="toc-text">properties setting</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Launch-service"><span class="toc-text">Launch service</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#More-info"><span class="toc-text">More info</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#What-is-spring-boot-admin"><span class="toc-text">What is spring boot admin</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SBA-version"><span class="toc-text">SBA version</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Initialize-a-spring-boot-project-for-spring-boot-admin"><span class="toc-text">Initialize a spring boot project for spring boot admin</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Include-dependencies"><span class="toc-text">Include dependencies</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Application-Property"><span class="toc-text">Application Property</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#main-Application-java"><span class="toc-text">main Application.java</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Launch"><span class="toc-text">Launch</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Register-other-spring-boot-services-to-monitor"><span class="toc-text">Register other spring boot services to monitor</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Dependency"><span class="toc-text">Dependency</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#properties-setting"><span class="toc-text">properties setting</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Security-config"><span class="toc-text">Security config</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Launch-service"><span class="toc-text">Launch service</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#More-info"><span class="toc-text">More info</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -422,9 +422,7 @@ server.forward-headers-strategy=native
 spring.profiles.active=secure
 
 spring.security.user.name=admin
-spring.security.user.password=password
-spring.boot.admin.client.username=client
-spring.boot.admin.client.password=password</code></pre><ol>
+spring.security.user.password=password</code></pre><ol>
 <li>server port set to 8089</li>
 <li><code>server.forward-headers-strategy=native</code> set for services behind a secure layer</li>
 <li><code>spring.profiles.active=secure</code> for secure configuration you will see later</li>
@@ -495,7 +493,7 @@ public class SBAserverApplication {
 <h2 id="Register-other-spring-boot-services-to-monitor"><a href="#Register-other-spring-boot-services-to-monitor" class="headerlink" title="Register other spring boot services to monitor"></a>Register other spring boot services to monitor</h2><p>Prepare a normal spring boot service.</p>
 <h3 id="Dependency"><a href="#Dependency" class="headerlink" title="Dependency"></a>Dependency</h3><p>Add dependency</p>
 <p><strong>build.gradle</strong></p>
-<pre><code class="json">
+<pre><code>
 dependencies {
 
     // spring boot admin
@@ -503,13 +501,17 @@ dependencies {
 
 
 }
-</code></pre>
-<h3 id="properties-setting"><a href="#properties-setting" class="headerlink" title="properties setting"></a>properties setting</h3><p><strong>application.properties</strong></p>
+</code></pre><h3 id="properties-setting"><a href="#properties-setting" class="headerlink" title="properties setting"></a>properties setting</h3><p><strong>application.properties</strong></p>
 <pre><code>spring.boot.admin.client.url=http://localhost:8089  
 management.endpoints.web.exposure.include=*
-spring.boot.admin.client.username=client
+spring.boot.admin.client.username=admin
 spring.boot.admin.client.password=password
-</code></pre><h3 id="Launch-service"><a href="#Launch-service" class="headerlink" title="Launch service"></a>Launch service</h3><p>Now you launch your registered services, and you can monitor it through the SBA dashboard.</p>
+</code></pre><h3 id="Security-config"><a href="#Security-config" class="headerlink" title="Security config"></a>Security config</h3><p>If you have configure <code>WebSecurityConfigurerAdapter</code> for this web application. You need to give free access to <code>/actuator</code> endpoints.<br>For example:</p>
+<pre><code class="java">protected void configure( HttpSecurity httpSecurity ) throws Exception {
+    httpSecurity.antMatchers(&quot;/actuator/**&quot;).permitAll() 
+}</code></pre>
+<p>So that SBA can get info from this service.</p>
+<h3 id="Launch-service"><a href="#Launch-service" class="headerlink" title="Launch service"></a>Launch service</h3><p>Now you launch your registered services, and you can monitor it through the SBA dashboard.</p>
 <h2 id="More-info"><a href="#More-info" class="headerlink" title="More info"></a>More info</h2><ol>
 <li>You can refer to my SBA project <a href="https://github.com/qiusiyuan/springboot-play/tree/master/SBAserver" target="_blank" rel="noopener">https://github.com/qiusiyuan/springboot-play/tree/master/SBAserver</a></li>
 <li>More about Spring Boot Admin <a href="https://codecentric.github.io/spring-boot-admin/current/" target="_blank" rel="noopener">https://codecentric.github.io/spring-boot-admin/current/</a></li>
@@ -524,10 +526,10 @@ spring.boot.admin.client.password=password
 
 <div class="article_copyright">
     <p><span class="copy-title">文章标题(Title):</span>Quick Setup for Sring Boot Admin 2.2</p>
-    <p><span class="copy-title">文章字数(Word count):</span><span class="post-count">615</span></p>
+    <p><span class="copy-title">文章字数(Word count):</span><span class="post-count">646</span></p>
     <p><span class="copy-title">本文作者(Author):</span><a href="javascript:void(0)" title="Siyuan Qiu">Siyuan Qiu</a></p>
     <p><span class="copy-title">发布时间(Post Date):</span>2020-01-13, 20:22:29</p>
-    <p><span class="copy-title">最后更新(Last updated):</span>2020-01-13, 20:30:36</p>
+    <p><span class="copy-title">最后更新(Last updated):</span>2020-01-14, 01:41:00</p>
     <span class="copy-title">原始链接(Source link):</span><a class="post-url" href="/Quick-Setup-for-Sring-Boot-Admin-2-2/en/" title="Quick Setup for Sring Boot Admin 2.2">https://qiusiyuan.github.io/Quick-Setup-for-Sring-Boot-Admin-2-2/en/</a>
     <p>
         <span class="copy-title">版权声明(License):</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0 (CC BY-NC-SA 4.0)"</a> 
