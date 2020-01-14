@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="siyuanqiu&#39;s blog">
 <meta property="og:description" content="Siyuan Qiu 邱思远Graduated from University of Toronto, Statistics and Computer Science, honors Bachelor of Science. Currently working on cloud platform aiming for AI and data science services. Interested">
 <meta property="og:locale" content="en, ch">
-<meta property="og:updated_time" content="2020-01-14T02:32:10.062Z">
+<meta property="og:updated_time" content="2020-01-14T02:39:41.842Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="About">
 <meta name="twitter:description" content="Siyuan Qiu 邱思远Graduated from University of Toronto, Statistics and Computer Science, honors Bachelor of Science. Currently working on cloud platform aiming for AI and data science services. Interested">
@@ -156,7 +156,7 @@
     <div><a class="about  hasFriend  site_url"  href="/about">About</a><a style="width: 50%"  class="friends">Links</a></div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="7">
-<input type="hidden" id="yelog_site_word_count" value="5.5k">
+<input type="hidden" id="yelog_site_word_count" value="5.6k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -367,12 +367,12 @@
     </div>
     <div class="article-meta">
         
-        Post time:<time class="date" title='更新时间: 2020-01-14 02:32:10'>2020-01-14 02:28</time>
+        Post time:<time class="date" title='更新时间: 2020-01-14 02:39:41'>2020-01-14 02:28</time>
         
     </div>
     <div class="article-meta">
         
-        <span>Words count:935</span>
+        <span>Words count:975</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -402,7 +402,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Introduction"><span class="toc-text">Introduction</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Dependencies"><span class="toc-text">Dependencies</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#User-details"><span class="toc-text">User details</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#User-Details-Services"><span class="toc-text">User Details Services</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#JWT-token-util"><span class="toc-text">JWT token util</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Auth-services"><span class="toc-text">Auth services</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Jwt-token-filter"><span class="toc-text">Jwt token filter</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Web-Security-Configuration"><span class="toc-text">Web Security Configuration</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#User-management-controller"><span class="toc-text">User management controller</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Introduction"><span class="toc-text">Introduction</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Dependencies"><span class="toc-text">Dependencies</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#User-details"><span class="toc-text">User details</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#User-Details-Services"><span class="toc-text">User Details Services</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#JWT-token-util"><span class="toc-text">JWT token util</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Auth-services"><span class="toc-text">Auth services</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Jwt-token-filter"><span class="toc-text">Jwt token filter</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Web-Security-Configuration"><span class="toc-text">Web Security Configuration</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#User-management-controller"><span class="toc-text">User management controller</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Launch"><span class="toc-text">Launch</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -645,7 +645,7 @@ public class JwtTokenFilter extends OncePerRequestFilter {
         chain.doFilter(request, response);
     }
 }</code></pre>
-<p>Important notes: After this filter, jwt token information will be extracted into user info and store in <code>SecurityContextHolder</code>, in other services, you can get the user info in <code>SecurityContextHolder.getContext().getAuthentication();</code></p>
+<p>Important notes: After this filter, jwt token information will be extracted into user info and store in <code>SecurityContextHolder</code>, in other services, you can get the user info in <code>SecurityContextHolder.getContext().getAuthentication();</code>.<br>This will return an <code>Authentication</code> object, from which you can get <code>UserDetail</code> Object by <code>auth.getPrincipal()</code>.  For other fields, please refer to <a href="https://docs.spring.io/spring-security/site/docs/3.0.x/apidocs/org/springframework/security/core/Authentication.html" target="_blank" rel="noopener">https://docs.spring.io/spring-security/site/docs/3.0.x/apidocs/org/springframework/security/core/Authentication.html</a> .</p>
 <h1 id="Web-Security-Configuration"><a href="#Web-Security-Configuration" class="headerlink" title="Web Security Configuration"></a>Web Security Configuration</h1><p>Then we can configure the spring secure web configuration<br><code>WebSecurityConfig.java</code></p>
 <pre><code class="java">@Configuration
 @EnableWebSecurity
@@ -690,36 +690,31 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 }</code></pre>
 <p>Important notes:</p>
 <ol>
-<li><p>Notice we set our custom <code>UserService</code> for authentication to user</p>
-</li>
-<li><p>I allowed all the request to <code>authentication</code> services</p>
-</li>
-<li><p>I allowed all the request to <code>actuator</code> endpoints which is for SBA(spring boot admin) to monitor this service.</p>
-</li>
-<li><p>Then I apply the filter for JWT token.</p>
-<h1 id="User-management-controller"><a href="#User-management-controller" class="headerlink" title="User management controller"></a>User management controller</h1><p>Simple controller</p>
+<li>Notice we set our custom <code>UserService</code> for authentication to user</li>
+<li>I allowed all the request to <code>authentication</code> services</li>
+<li>I allowed all the request to <code>actuator</code> endpoints which is for SBA(spring boot admin) to monitor this service.</li>
+<li>Then I apply the filter for JWT token.<h1 id="User-management-controller"><a href="#User-management-controller" class="headerlink" title="User management controller"></a>User management controller</h1></li>
+</ol>
+<p>Simple controller</p>
 <pre><code class="java">@RestController
 public class JwtTokenAuthController {
 
- @Autowired
- private AuthService authService;
+    @Autowired
+    private AuthService authService;
 
- @RequestMapping(value = &quot;/authentication/login&quot;, method = RequestMethod.POST)
- public String createToken( String username,String password ) throws AuthenticationException {
-     return authService.login( username, password );
- }
+    @RequestMapping(value = &quot;/authentication/login&quot;, method = RequestMethod.POST)
+    public String createToken( String username,String password ) throws AuthenticationException {
+        return authService.login( username, password );
+    }
 
- @RequestMapping(value = &quot;/authentication/register&quot;, method = RequestMethod.POST)
- public User register( @RequestBody User addedUser ) throws AuthenticationException {
-     return authService.register(addedUser);
- }
-</code></pre>
-</li>
-</ol>
-<p>}</p>
-<pre><code>
-# Launch
-Now you must call `login` api to get the token first to get access to other apis.</code></pre>
+    @RequestMapping(value = &quot;/authentication/register&quot;, method = RequestMethod.POST)
+    public User register( @RequestBody User addedUser ) throws AuthenticationException {
+        return authService.register(addedUser);
+    }
+
+}</code></pre>
+<h1 id="Launch"><a href="#Launch" class="headerlink" title="Launch"></a>Launch</h1><p>Now you must call <code>login</code> api to get the token first to get access to other apis.</p>
+
       
        <hr><span style="font-style: italic;color: gray;"> Please respect copyright, feel free to leave comment for any mistake or confusion. 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论。 </span>
     </div>
@@ -729,10 +724,10 @@ Now you must call `login` api to get the token first to get access to other apis
 
 <div class="article_copyright">
     <p><span class="copy-title">文章标题(Title):</span>Spring security with Jwt Token</p>
-    <p><span class="copy-title">文章字数(Word count):</span><span class="post-count">935</span></p>
+    <p><span class="copy-title">文章字数(Word count):</span><span class="post-count">975</span></p>
     <p><span class="copy-title">本文作者(Author):</span><a href="javascript:void(0)" title="Siyuan Qiu">Siyuan Qiu</a></p>
     <p><span class="copy-title">发布时间(Post Date):</span>2020-01-14, 02:28:33</p>
-    <p><span class="copy-title">最后更新(Last updated):</span>2020-01-14, 02:32:10</p>
+    <p><span class="copy-title">最后更新(Last updated):</span>2020-01-14, 02:39:41</p>
     <span class="copy-title">原始链接(Source link):</span><a class="post-url" href="/Spring-security-with-Jwt-Token/en/" title="Spring security with Jwt Token">https://qiusiyuan.github.io/Spring-security-with-Jwt-Token/en/</a>
     <p>
         <span class="copy-title">版权声明(License):</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0 (CC BY-NC-SA 4.0)"</a> 
